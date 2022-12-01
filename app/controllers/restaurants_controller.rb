@@ -1,5 +1,5 @@
-class RestaurantsController < ApplicationController\
-rescue_from ActiveRecord::RacordNotFound, with::record_not_found_response
+class RestaurantsController < ApplicationController
+rescue_from ActiveRecord::RecordNotFound, with: :record_not_found_response
 
 
     def index
@@ -10,7 +10,7 @@ rescue_from ActiveRecord::RacordNotFound, with::record_not_found_response
     def show
 
         restaurant = find_restaurant
-        render json:restaurant, serializer : RestaurantWithPizzaSerializer
+        render json: restaurant, serializer: RestaurantWithPizzaSerializer
     end
 
     def destroy
@@ -27,7 +27,7 @@ rescue_from ActiveRecord::RacordNotFound, with::record_not_found_response
     private
     def record_not_found_response(exception)
     
-        render json:{ "error": "Restaurant not found"}, status: :not_found
+        render json: { "error": "Restaurant not found"}, status: :not_found
     
     end
 
