@@ -2,7 +2,7 @@ class PizzasController < ApplicationController
 
     def index
     
-        render json:Restaurant.all
+        render json:Pizza.all
         end
 
 end
