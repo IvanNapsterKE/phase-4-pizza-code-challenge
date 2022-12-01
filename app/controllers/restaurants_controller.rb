@@ -2,10 +2,7 @@ class RestaurantsController < ApplicationController\
 rescue_from ActiveRecord::RacordNotFound, with::record_not_found_response
 
 
-    def index
     
-    render json:Restaurant.all
-    end
 
     def show
 
